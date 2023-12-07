@@ -1,0 +1,34 @@
+<div class="container">
+   <div class="row">
+      <div class="col-sm-3 text-center">
+         <img width="90%" id="userAvatar" src="" alt="">
+         <form action="/changeAvatar" method="post" enctype="multipart/form-data">
+            <input type="file" name="avatar" class="form-control">
+            <input type="submit" value="Загрузить" class="form-control btn btn-primary">
+         </form>
+      </div>
+      <div class="col-sm-9">
+         <p><strong>Имя: </strong> <span id="name"></span></p>
+         <p><strong>Фамилия: </strong><span id="lastname"></span></p>
+         <p><strong>Email: </strong><span id="email"></span></p>
+         <p><strong>ID: </strong><span id="userid"></span></p>
+      </div>
+   </div>
+</div>
+<script>
+   const name = document.getElementById('name');
+   const lastname = document.getElementById('lastname');
+   const email = document.getElementById('email');
+   const userid = document.getElementById('userid');
+   const userAvatar = document.getElementById('userAvatar');
+   fetch('/getUserData')
+      .then(Response => Response.json())
+      .then(result => {
+         console.log(result);
+         name.innerText = result.name;
+         lastname.innerText = result.lastname;
+         email.innerText = result.email;
+         userid.innerText = result.id;
+         userAvatar.src = result.img;
+      })
+</script>

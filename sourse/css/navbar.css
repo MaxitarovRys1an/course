@@ -1,0 +1,23 @@
+.navbar-brand{
+   color: rgb(0, 255, 191);
+   font-size: 25px;
+   font-weight: 600;
+}
+.navbar-brand:hover{
+   color: rgb(0, 213, 160);
+}
+.cl-1{
+   color: rgb(0, 255, 238);
+   font-size: 20px;
+   font-weight: 600;
+}
+.cl-1:hover{
+   color: rgb(0, 213, 199);
+   font-size: 20px;
+   font-weight: 600;
+   text-decoration:underline;
+}
+.navbar-toggler{
+   color: rgb(69, 69, 69);
+   background-color: rgb(162, 162, 162);
+}

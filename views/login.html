@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="../sourse/css/form.css">
+<div class="grad-fon">
+   <form class="box" onsubmit="sendForm(this); return false;" method="post">
+      <h1>ВХОД</h1>
+      <input class="btn mt" type="email" name="email" placeholder="Email">
+      <input class="btn" type="password" name="pass" placeholder="Password">
+      <p class="text-danger" id='info2' hidden>Неправильный логин или пароль</p>
+      <input class="button" type="submit" value="Войти">
+   </form>
+</div>
+<script>
+   const info = document.getElementById('info2');
+   function sendForm(form){
+      info.hidden = true;
+      const formData = new FormData(form);
+      fetch ('/Login', {
+         method: "post",
+         body: formData
+      }).then (Response=>Response.json())
+      .then(result=>{
+         if(result.result == 'success'){
+            location.href = 'profile'
+         }else{
+            info.hidden = false;
+         }
+      })
+   }
+</script>

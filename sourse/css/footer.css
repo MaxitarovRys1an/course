@@ -1,0 +1,53 @@
+.f-p {
+   display: grid;
+   grid-template-columns: 10% 20% 20% 20% 20% 10%;
+   color: #dedede;
+}
+
+@media (max-width: 1000px) {
+   .f-p {
+      display: grid;
+      grid-template-columns: repeat(2);
+      grid-template-rows: repeat(5);
+   }
+}
+
+.f-p_1 {
+   background-color: #272727;
+   padding-top: 50px;
+   padding-bottom: 25px;
+}
+
+.f-p_1 ul {
+   text-align: left;
+   list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+   color: #dedede;
+}
+
+a:hover {
+   text-decoration: underline;
+   color: #959595;
+}
+
+.b-1 {
+   padding-bottom: 10px;
+   margin-left: 10px;
+}
+
+.b-2 {
+   padding-bottom: 40px;
+   margin-left: 10px;
+}
+
+.soc_net {
+   width: 35px;
+}
+
+p {
+   margin: 0;
+   margin-left: 10px;
+}

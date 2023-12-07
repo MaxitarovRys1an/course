@@ -1,0 +1,22 @@
+body {
+   background: linear-gradient(213deg, #000085 0%, #ff00a2 100%);
+}
+/* карты товаров */
+.card-text_1 {
+   font-size: 20px;
+   font-weight: 500;
+}
+.card-text_2 {
+   font-size: 18px;
+   font-weight: 500;
+}
+/* Геолокация */
+.p-card {
+   font-size: 26px;
+   color: white;
+   margin-bottom: 10px;
+   font-weight: 500;
+}
+.card:hover{
+   box-shadow: 5px 5px 8px 1px #000000;
+}

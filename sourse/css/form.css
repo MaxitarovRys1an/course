@@ -1,0 +1,83 @@
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+}
+html {
+   background-image: url(../css/bg-fon.jpg);
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+.box {
+   width: 300px;
+   padding: 40px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background: rgba(0, 0, 0, 0.734);
+   border: solid 1px #191919;
+   text-align: center;
+   border-radius: 10px;
+}
+.box:hover {
+   width: 300px;
+   padding: 40px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border: #191919;
+   text-align: center;
+   box-shadow: 1px 1px 15px 1px black;
+   transition: 0.45s;
+}
+.box h1 {
+   color: white;
+   text-transform: uppercase;
+   font-weight: 500px;
+}
+.btn {
+   border: 0;
+   background: none;
+   display: block;
+   margin: 20px auto;
+   text-align: center;
+   border: 2px solid #ff0000;
+   padding: 14px;
+   width: 200px;
+   outline: none;
+   color: white;
+   border-radius: 25px;
+   transition: 0.5s;
+}
+.btn:focus {
+   width: 260px;
+   border-color: #8400ff;
+}
+.button {
+   border: 0;
+   background: none;
+   margin: 20px auto;
+   text-align: center;
+   border: 2px solid #8400ff;
+   padding: 14px 40px;
+   width: 200px;
+   color: white;
+   outline: none;
+   border-radius: 25px;
+   transition: 0.5s;
+   cursor: pointer;
+}
+.button:hover {
+   background-color: #8400ff;
+   font-size: 14px;
+   width: 220px;
+}

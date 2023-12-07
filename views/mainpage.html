@@ -1,0 +1,24 @@
+<div class="container" id="container">
+
+</div>
+<script>
+   const container = document.getElementById('container');
+   fetch('/getArticles')
+   .then (Response=>Response.json())
+   .then (result=>{
+      console.log(result);
+      for (let i = 0; i <result.length; i++){
+         let article = result[i];
+         const a = document.createElement('a');
+         const div = document.createElement('div');
+         const p = document.createElement('p');
+         const hr = document.createElement('hr')
+         a.classList.add('h3');
+         a.href= "/blog/"+article.id;
+         a.innerText = article.title;
+         div.innerText = article.content;
+         p.innerText = article.autor;
+         container.append(a, div, p, hr);
+      }
+   })
+</script>

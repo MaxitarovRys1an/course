@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>blocks</title>
+</head>
+<style>
+   .block {
+      position: absolute;
+      height: 250px;
+      width: 250px;
+   }
+
+   #redblock {
+      background: red;
+      top: 0;
+      left: 0
+   }
+
+   #yellowblock {
+      background: yellow;
+      bottom: 0;
+      left: 0
+   }
+
+   #limeblock {
+      right: 0;
+      background: lime;
+      top: 0;
+   }
+
+   #blueblock {
+      bottom: 0;
+      background: blue;
+      right: 0;
+   }
+
+   .circle {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      position: absolute;
+      cursor: pointer;
+   }
+</style>
+
+<body>
+   <div class="block" id="redblock" data-color="red"></div>
+   <div class="block" id="yellowblock" data-color="yellow"></div>
+   <div class="block" id="limeblock" data-color="lime"></div>
+   <div class="block" id="blueblock" data-color="blue"></div>
+
+   <script>
+      let circle = document.getElementById("circle");
+      let colors = ["red", "lime", "yellow", "blue"];
+      function getIntRandom(max, min) {
+         return Math.round(Math.random() * (max - min) + min);
+      }
+      for (let i = 0; i < 5; i++) {
+         let circle = document.createElement('div');
+         circle.classList.add('circle');
+         let color = colors[getIntRandom(0, 3)];
+         circle.style.background = color;
+         circle.style.left = getIntRandom(250, window.innerWidth - 250 - 100) + "px";
+         circle.style.top = getIntRandom(250, window.innerHeight - 250 - 100) + "px";
+         document.body.append(circle);
+         circle.onmousedown = function (event) {
+            console.log(event);
+            circle.style.top = event.pageY - 50 + "px";
+            circle.style.left = event.pageX - 50 + "px";
+            window.onmousemove = function (er) {
+               circle.style.top = er.pageY - 50 + "px";
+               circle.style.left = er.pageX - 50 + "px";
+               circle.style.left
+            }
+            window.onmouseup = function () {
+               window.onmousemove = function () { return false; }
+            // if(d){}
+            }
+         }
+      }
+   </script>
+</body>
+
+</html>
