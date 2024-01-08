@@ -6,11 +6,14 @@ require_once('PHP/classes/User.php');
 require_once('PHP/classes/Blog.php');
 require_once('PHP/classes/Rout.php');
 
+require_once ('PHP/classes/simple_html_dom.php');
+
+
 
 Rout::view('/', 'views/mainpage.html');
 Rout::view('/blog/{id}', 'views/article.html');
 
-Rout::get('/getArticle/{id}', function(){return Blog::getArticleById(1);});
+Rout::get('/getArticle/{id}', function($id){return Blog::getArticleById($id);});
 Rout::get('/getArticles', function(){return Blog::getArticles();});
 Rout::get('/getUserData', function(){return User::getUserData();});
 Rout::get('/logout', function(){return User::logout();});

@@ -22,12 +22,14 @@ class Rout{
    }
    public static function get($uri, $handler){
       $paths = explode ("/", $_SERVER['REQUEST_URI']);
+      $param = null;
       if (count($paths)>2){
          $uri = explode('/',  $uri)[1];
          $uri = '/'.$uri.'/'.$paths[2];
+         $param = $paths[2];
       }
       if($_SERVER['REQUEST_URI']==$uri && $_SERVER['REQUEST_METHOD']=='GET'){
-         exit($handler());
+         exit($handler($param));
       }
    }
 }
